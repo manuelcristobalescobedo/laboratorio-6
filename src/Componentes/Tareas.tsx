@@ -1,19 +1,25 @@
+import { useState, useEffect } from "react"
 import Tarea from "./Tarea"
+import type { Tarea as TareaType } from "../Tipos/Tarea"
 
 export default function Tareas() {
-    // leer tareas guardadas
-    const tareasGuardadas = localStorage.getItem("tareas")
-    const tareasArray = tareasGuardadas ? JSON.parse(tareasGuardadas) : []
+    const [tareas, setTareas] = useState<TareaType[]>([])
 
-    // convertir cada tarea de string a objeto
-    const tareasObjetos = tareasArray.map((t: string) => JSON.parse(t))
+    useEffect(() => {
+        const tareasGuardadas = localStorage.getItem("tareas")
+        if (tareasGuardadas) {
+            const tareasArray: TareaType[] = JSON.parse(tareasGuardadas)
+            setTareas(tareasArray)
+        }
+    }, [])
 
     return (
         <div>
-        <h1>Página de tareas</h1>
-        {tareasObjetos.map((tarea: any, index: number) => (
-            <Tarea key={index} tarea={tarea} />
-        ))}
+            <h1>Página de tareas</h1>
+            {tareas.map((tarea) => (
+                <Tarea key={tarea.numero} tarea={tarea} tareas={tareas} setTareas={setTareas} 
+                />
+            ))}
         </div>
     )
 }
