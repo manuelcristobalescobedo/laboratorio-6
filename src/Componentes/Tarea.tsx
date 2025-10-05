@@ -7,6 +7,11 @@ type Props = {
 }
 
 export default function Tarea({ tarea, tareas, setTareas }: Props) {
+
+    // const handleClick = () => {
+    //     setContador(prevState => prevState + 1);
+    // }
+
     function handleEliminar() {
         const nuevasTareas: Tarea[] = []
 
@@ -18,10 +23,20 @@ export default function Tarea({ tarea, tareas, setTareas }: Props) {
             }
         }
 
+        // localStorage.setItem("login", JSON.stringify({
+        //     username: "cmd",
+        //     loginDate: new Date(),
+        //     mail: "carlosmarind@gmail.com"
+        // }));
+
         localStorage.setItem("tareas", JSON.stringify(nuevasTareas))
 
         setTareas(nuevasTareas)
     }
+
+    // const handleClick = () => {
+    //     setContador(prevState => prevState + 1);
+    // }
 
     function handleCambiarEstado(e: React.ChangeEvent<HTMLSelectElement>) {
         const nuevoEstado = e.target.value === "true"
@@ -41,10 +56,29 @@ export default function Tarea({ tarea, tareas, setTareas }: Props) {
             }
         }
 
+        // localStorage.setItem("login", JSON.stringify({
+        //     username: "cmd",
+        //     loginDate: new Date(),
+        //     mail: "carlosmarind@gmail.com"
+        // }));
+
         localStorage.setItem("tareas", JSON.stringify(nuevasTareas))
 
         setTareas(nuevasTareas)
     }
+
+    // <h3>El valor del contador es :{contador}</h3>
+    // <h4>La Hora es : {hora.toLocaleTimeString()}</h4>
+    // <ul>
+    //     {
+    //         listaProductos.map((producto) => {
+    //             return (
+    //                 <li key={producto.id}> {producto.nombre} - {producto.stock} -  {producto.uuid}</li>
+    //             )
+    //         })
+    //     }
+    // </ul>
+    // <button onClick={handleClick}> + aumentar contador</button>
 
     return (
         <div className="Tarea">
