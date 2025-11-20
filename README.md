@@ -3,7 +3,7 @@ docker.io/manuelcristobalescobedo/laboratorio-6
 <br>
 
 ### Nombre y dirección del repositorio Git:
-[Agrega aquí la URL de tu repositorio]
+https://github.com/manuelcristobalescobedo/laboratorio-6
 <br>
 
 ### Nombre de la imagen:
