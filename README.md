@@ -1,3 +1,5 @@
+Laboratorio realizado por Martín Hucke y Manuel Escobedo
+
 ### Nombre y dirección del repositorio Docker Hub:
 docker.io/manuelcristobalescobedo/laboratorio-6
 <br>
